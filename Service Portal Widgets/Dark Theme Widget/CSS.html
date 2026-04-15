@@ -1,0 +1,45 @@
+/* ════════════════════════════════════════════════════════
+   LIGHT MODE - Default
+   ═══════════════════════════════════════════════════════ */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f5f7;
+  --text-primary: #2c3e50;
+  --text-secondary: #5a6c7d;
+  --border-color: #d0d5dd;
+  --card-bg: #ffffff;
+  --button-bg: #0066cc;
+  --link-color: #0066cc;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ════════════════════════════════════════════════════════
+   DARK MODE - Override with data attribute
+   ═══════════════════════════════════════════════════════ */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --text-primary: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --border-color: #3f3f46;
+  --card-bg: #242424;
+  --button-bg: #3b82f6;
+  --link-color: #60a5fa;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* ════════════════════════════════════════════════════════
+   APPLY TO ALL ELEMENTS - Magic happens here
+   ═══════════════════════════════════════════════════════ */
+body { 
+  background: var(--bg-primary); 
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.panel { background: var(--card-bg); border: 1px solid var(--border-color); }
+.form-control { background: var(--input-bg); color: var(--text-primary); }
+.navbar { background: var(--header-bg); }
+a { color: var(--link-color); }
+
+/* That's it! All elements update automatically via cascade */
